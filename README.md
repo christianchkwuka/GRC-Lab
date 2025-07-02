@@ -88,8 +88,4 @@ Cybersecurity & IT Audit Enthusiast
 
 
 
-Tools
 
-
-
-ChatGPT can m
