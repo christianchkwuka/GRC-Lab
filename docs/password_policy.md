@@ -95,8 +95,4 @@ It is a fundamental part of access control under **ISO 27001 A.9**.
 
 
 
-Tools
 
-
-
-ChatG
