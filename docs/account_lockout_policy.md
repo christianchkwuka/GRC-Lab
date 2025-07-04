@@ -30,9 +30,12 @@ This policy is intended to prevent automated attacks (e.g., brute-force) by lock
 ## 📸 Screenshot
 
 ![Account Lockout Screenshot](./account_lockout_screenshot.PNG)
+![Passwort_policy](https://github.com/user-attachments/assets/2452db98-ac0a-43cb-842f-e655c00e940b)
+
 
 
 📚 Referenz / Reference
+
 ISO/IEC 27001:2022 – A.9.4.3: Use of secret authentication information
 
 BSI Grundschutz – SYS.1.2.A16: Schutz vor Brute-Force
