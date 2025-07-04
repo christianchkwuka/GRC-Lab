@@ -39,7 +39,9 @@ BitLocker secures drive data through encryption, preventing unauthorized access 
 
 ## 📸 Screenshot
 
-![BitLocker GPO Einstellungen](../../assets/screenshots/bitlocker/bitlocker_policy.PNG)
+
+![Bitlocker](https://github.com/user-attachments/assets/be8ec313-e879-46cb-a7a4-f438cc7392c0)
+
 
 ---
 
