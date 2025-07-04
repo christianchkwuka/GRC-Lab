@@ -1,69 +1,88 @@
 
-📁 Ordnerumleitung / Folder Redirection Policy
+🔍 Logon Event Auditing / Anmeldeereignisse überwachen
 
-📌 GPO-Pfad / GPO Path
-User Configuration → Policies → Windows Settings → Folder Redirection → Documents / Desktop / Pictures / etc.
+📄 logon_event_auditing.md – Dokumentation (Deutsch 🇩🇪 + Englisch 🇬🇧)
 
-🎯 Ziel / Purpose
-Deutsch:
-Die Ordnerumleitung ermöglicht die Speicherung von Benutzerdateien (z. B. Dokumente, Desktop) auf einem zentralen Server anstatt lokal auf dem Client. Das erleichtert Backups, erhöht die Datensicherheit und erfüllt Anforderungen aus ISO 27001 (A.12.3).
 
-English:
-Folder redirection allows user data (e.g. Documents, Desktop) to be stored on a central server rather than on the local device. This supports backup strategies, improves data security, and complies with ISO 27001 (A.12.3).
+# 🔍 Logon Event Auditing / Anmeldeereignisse überwachen
 
-🛠️ Umsetzung / Implementation
-Richtlinie / Policy	Einstellung / Setting
-Documents folder redirection	Basic – Redirect to the following location
-Target folder location	\Server\Users%USERNAME%\Documents
-Grant user exclusive rights to Documents	Enabled
-Move contents of Documents to the new location	Enabled
-Policy removal behavior	Redirect the folder back to the local userprofile
-Apply redirection policy to Windows 2000/XP/7 and later	Enabled
+## 📌 GPO-Pfad / GPO Path  
+Computer Configuration → Policies → Windows Settings → Security Settings → Advanced Audit Policy Configuration → Audit Policies → Logon/Logoff
 
-🔐 Sicherheitseinstellungen / Security Controls
-Nur autorisierte Benutzer haben Zugriff auf ihren Ordner
+---
 
-Freigabe mit NTFS-Berechtigungen: Nur Besitzer + Admins
+## 🎯 Ziel / Purpose
 
-Zentralisierte Speicherung für bessere Backup-/Recovery-Prozesse
+**Deutsch:**  
+Diese Richtlinie stellt sicher, dass alle Anmeldeversuche – sowohl erfolgreiche als auch fehlgeschlagene – protokolliert werden. Sie ist essenziell für die Erkennung unbefugter Zugriffe und die forensische Analyse gemäß ISO 27001 A.12.4 und BSI SYS.1.2.A16.
 
-📸 Screenshot
-markdown
-Copy
-Edit
-![Folder Redirection GPO Settings](../../assets/screenshots/folder_redirection_policy/folder_redirection_config.PNG)
-📚 Referenzen / References
-ISO/IEC 27001:2022 – A.12.3.1: Information backup
+**English:**  
+This policy ensures that all login attempts—both successful and failed—are logged. It is essential for detecting unauthorized access and for forensic analysis in line with ISO 27001 A.12.4 and BSI SYS.1.2.A16.
 
-BSI Grundschutz – OPS.1.2.A5: Zentrale Datenspeicherung
+---
 
-NIST 800-53 – CP-9: Information System Backup
+## 🛠️ Umsetzung / Implementation
 
-DSGVO Artikel 32 – Sicherheit der Verarbeitung
+| Ereignis / Event                     | Einstellung / Setting     |
+|--------------------------------------|----------------------------|
+| Audit Logon Events                   | Success, Failure           |
 
-✅ Prüfung / Audit Check
-Deutsch:
+---
 
-Wird der Dokumente-Ordner erfolgreich auf den zentralen Pfad \Server\Users%USERNAME% umgeleitet?
+## ⚙️ Technische Details
 
-Haben nur berechtigte Benutzer Zugriff?
+- Aktivierung erfolgt über Gruppenrichtlinie im Modus „Erweiterte Überwachungsrichtlinie“  
+- Ereignis-IDs in der Ereignisanzeige (Event Viewer):  
+  - **4624**: Erfolgreiche Anmeldung  
+  - **4625**: Fehlgeschlagene Anmeldung  
+  - **4634**: Abmeldung  
+  - **4648**: Anmeldung mit expliziten Anmeldeinformationen  
 
-Funktioniert die Rückführung bei Richtlinienentfernung korrekt?
+---
 
-English:
+## 📸 Screenshot
 
-Is the Documents folder redirected to \Server\Users%USERNAME%?
+![Event_logs](https://github.com/user-attachments/assets/d3d06f4f-a3a4-483b-87ce-0ac10095ddd8)
 
-Do only authorized users have access?
 
-Does the rollback work correctly when the policy is removed?
+---
 
-🧪 Testdurchführung / Validation
-Benutzer meldet sich an → „Dokumente“ zeigt \Server\Users\TestUser
+## 📚 Referenz / Reference
 
-Datei im Umleitungsordner erstellt → erscheint auf Server
+- **ISO/IEC 27001:2022** – A.12.4.1: Event Logging  
+- **BSI Grundschutz** – SYS.1.2.A16: Protokollierung sicherheitsrelevanter Ereignisse  
+- **NIST 800-53** – AU-2: Event Logging  
+- **DSGVO Artikel 32** – Sicherheit der Verarbeitung
 
-GPO entfernt → Ordner kehrt lokal zurück
+---
+
+## ✅ Prüfung / Audit Check
+
+**Deutsch:**  
+- Werden Anmeldeversuche (Erfolg & Fehler) protokolliert?  
+- Sind die entsprechenden Event-IDs in der Ereignisanzeige sichtbar?  
+- Ist die Richtlinie auf alle relevanten Clients und Server angewendet?
+
+**English:**  
+- Are login attempts (success & failure) logged?  
+- Are the relevant event IDs visible in Event Viewer?  
+- Is the policy applied to all relevant clients and servers?
+
+---
+
+## 🧪 Testdurchführung / Validation
+
+- Benutzer `AuditUser` erstellt  
+- Mehrere fehlgeschlagene und erfolgreiche Anmeldungen durchgeführt  
+- Event Viewer geprüft: IDs 4624 und 4625 wurden korrekt geloggt  
+- Richtlinie wurde über Gruppenrichtlinie aktiviert
+
+
+
+
+
+
+
 
 
 
