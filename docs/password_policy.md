@@ -52,7 +52,7 @@ It is a fundamental part of access control under **ISO 27001 A.9**.
 
 ## 📸 Screenshot
 
-![Passwortrichtlinie Screenshot](../../assets/screenshots/password_policy/Passwort_policy.PNG)
+![Account Lockout Screenshot](./account_lockout_screenshot.PNG)
 
 ---
 
