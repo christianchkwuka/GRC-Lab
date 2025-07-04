@@ -48,23 +48,23 @@ This IT system is intended for authorized users only. All activities may be moni
 ![legal display](https://github.com/user-attachments/assets/c7ee115c-1600-49f3-9535-a5929b6c6c27)
 
 📚 Referenz / Reference
+
 ISO/IEC 27001:2022 – A.9.4.2: Secure log-on procedures
-
 NIST SP 800-53 – AC-8: System Use Notification
-
 BSI Grundschutz – SYS.1.2.A16: Benutzerhinweise anzeigen
 
 ✅ Prüfung / Audit Check
+
 Prüffrage (Deutsch)	Audit Check (English)
-Wird ein rechtlicher Hinweis vor der Anmeldung angezeigt?	Is a legal banner shown before logon?
-Entspricht der Text den Vorgaben (Warnung, Protokollierung)?	Does the banner comply (warning, logging notice)?
-Ist der Text nicht manipulierbar durch den Benutzer?	Is the message secure and uneditable by users?
+
+Wird ein rechtlicher Hinweis vor der Anmeldung angezeigt?      	Is a legal banner shown before logon?
+Entspricht der Text den Vorgaben (Warnung, Protokollierung)?   	Does the banner comply (warning, logging notice)?
+Ist der Text nicht manipulierbar durch den Benutzer?	          Is the message secure and uneditable by users?
 
 🧪 Testdurchführung / Validation
+
 Titel und Nachricht in GPO konfiguriert
-
 Anzeige bei Anmeldung geprüft (vor Username/PW-Eingabe sichtbar)
-
 Screenshot erstellt und dokumentiert
 
 
