@@ -39,6 +39,7 @@ This policy prevents user accounts from being compromised through repeated login
 
 ## 📸 Screenshot
 
+![kontosperrungsrichtlinien](https://github.com/user-attachments/assets/616c9c6b-8ea2-4d06-afa7-952dea05406e)
 
 ---
 
