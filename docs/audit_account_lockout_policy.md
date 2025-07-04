@@ -17,7 +17,7 @@ Sicherstellen, dass Kontosperrungsrichtlinien implementiert wurden, um Brute-For
 
 ## 🔍 Audit Scope
 - Gruppenrichtlinie: Default Domain Policy  
-- Server: Windows Server 2019  
+- Server: Windows Server 2022  
 - Ziel: Domänenbenutzerkonten
 
 ---
