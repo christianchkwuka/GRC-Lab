@@ -30,6 +30,7 @@ This policy is intended to prevent automated attacks (e.g., brute-force) by lock
 ## 📸 Screenshot
 
 
+![kontosperrungsrichtlinien](https://github.com/user-attachments/assets/90352896-c2b3-4d28-b65e-c06817ca582d)
 
 
 
