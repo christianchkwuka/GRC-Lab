@@ -26,39 +26,11 @@ This policy is intended to prevent automated attacks (e.g., brute-force) by lock
 
 ---
 
-## 📸 Screenshot
 
-👉 Füge deinen Screenshot hier ein (z. B.):
-
-Füge den folgenden Code hinzu oder ersetze bestehenden:
-
-markdown
-Copy
-Edit
 ## 📸 Screenshot
 
 ![Account Lockout Screenshot](./account_lockout_screenshot.PNG)
-Falls du den Screenshot in einen Unterordner wie docs/screenshots/ legen willst, lautet der Pfad so:
 
-markdown
-Copy
-Edit
-![Account Lockout Screenshot](./screenshots/account_lockout_screenshot.PNG)
-Scrolle nach unten und Commit changes.
-
-📌 Hinweis
-Wenn du das Bild versehentlich auf Root-Level (wie Passwort_policy.PNG) hochgeladen hast, kannst du es:
-
-löschen: Datei öffnen → ... (3 Punkte oben rechts) → Delete this file
-
-neu hochladen unter docs/ oder docs/screenshots/
-
-Möchtest du den Screenshot lieber in einen Unterordner wie docs/screenshots/ organisieren? Dann richte ich das für dich ein.
-
-Sag einfach Bescheid:
-📸 Dateiname + 💼 Wohin soll das Bild?
-
-![Account Lockout Screenshot](./docs/account_lockout_policy.PNG)
 
 📚 Referenz / Reference
 ISO/IEC 27001:2022 – A.9.4.3: Use of secret authentication information
