@@ -58,13 +58,17 @@ BSI Grundschutz – SYS.1.2.A16: Benutzerhinweise anzeigen
 Prüffrage (Deutsch)	Audit Check (English)
 
 Wird ein rechtlicher Hinweis vor der Anmeldung angezeigt?      	Is a legal banner shown before logon?
+
 Entspricht der Text den Vorgaben (Warnung, Protokollierung)?   	Does the banner comply (warning, logging notice)?
+
 Ist der Text nicht manipulierbar durch den Benutzer?	          Is the message secure and uneditable by users?
 
 🧪 Testdurchführung / Validation
 
 Titel und Nachricht in GPO konfiguriert
+
 Anzeige bei Anmeldung geprüft (vor Username/PW-Eingabe sichtbar)
+
 Screenshot erstellt und dokumentiert
 
 
