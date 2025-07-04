@@ -35,13 +35,17 @@ Displaying a legal banner before login informs users about usage policies and mo
 
 ### 📄 Text / Message
 
-```plaintext
+
+
 Deutsch:
 Diese IT-Systeme sind ausschließlich für autorisierte Benutzer bestimmt. Alle Aktivitäten können protokolliert und überwacht werden. Unbefugter Zugriff wird strafrechtlich verfolgt.
 
 English:
 This IT system is intended for authorized users only. All activities may be monitored and recorded. Unauthorized access is prohibited and will be prosecuted.
+
 📸 Screenshot
+
+![legal display](https://github.com/user-attachments/assets/c7ee115c-1600-49f3-9535-a5929b6c6c27)
 
 📚 Referenz / Reference
 ISO/IEC 27001:2022 – A.9.4.2: Secure log-on procedures
