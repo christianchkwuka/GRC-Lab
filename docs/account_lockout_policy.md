@@ -42,35 +42,36 @@ This policy prevents user accounts from being compromised through repeated login
 ![kontosperrungsrichtlinien](https://github.com/user-attachments/assets/616c9c6b-8ea2-4d06-afa7-952dea05406e)
 
 ---
-
 ## 📚 Referenz / Reference
 
-- **ISO/IEC 27001:2022** – A.9.4.3: Use of secret authentication information  
-- **BSI Grundschutz** – SYS.1.2.A16: Schutz vor Brute-Force-Angriffen  
-- **DSGVO (Artikel 32)** – Sicherheit der Verarbeitung  
-- **NIST 800-53 – AC-7: Unsuccessful Login Attempts**
+- **ISO/IEC 27001:2022** – A.9.2.3: Management of privileged access rights  
+- **BSI Grundschutz** – SYS.1.2.A15: Sichere Passwörter  
+- **DSGVO (Artikel 32)** – Sicherheit der Verarbeitung
+- **NIST 800-53 – IA-5 Authenticator Management**
+
 
 ---
 
 ## ✅ Prüfung / Audit Check
 
 **Deutsch:**  
-- Ist die Kontosperrung nach X Fehlversuchen aktiviert?  
-- Wird die Sperrdauer und Rücksetzzeit wie konfiguriert umgesetzt?  
-- Wurde ein Angriffsszenario erfolgreich verhindert?
+- Wurde die Passwort-Richtlinie in der Gruppenrichtlinie korrekt konfiguriert?  
+- Entspricht die Richtlinie den Mindestanforderungen (Länge, Komplexität, Ablauf)?  
+- Wurde dies auf einem Client erfolgreich durchgesetzt?
 
 **English:**  
-- Is account lockout enabled after X failed login attempts?  
-- Are lockout duration and reset settings correctly configured?  
-- Was a brute-force scenario successfully mitigated?
+- Was the password policy correctly configured in GPO?  
+- Does it meet minimum standards (length, complexity, expiration)?  
+- Was it successfully enforced on a domain client?
 
 ---
 
 ## 🧪 Testdurchführung / Validation
 
-- Testbenutzerkonto: `TestUser2`  
-- 5 falsche Passwörter → Konto gesperrt  
-- Sperrung automatisch nach 15 Minuten aufgehoben
+- Testbenutzerkonto erstellt (`TestUser1`)
+- Anmeldung mit schwachem Passwort wurde verweigert
+- Ablaufdatum korrekt gesetzt: 42 Tage
+
 
 
 
