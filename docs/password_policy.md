@@ -52,7 +52,8 @@ It is a fundamental part of access control under **ISO 27001 A.9**.
 
 ## 📸 Screenshot
 
-![Account Lockout Screenshot](./account_lockout_screenshot.PNG)
+
+![Passwort_policy](https://github.com/user-attachments/assets/8048f062-37d8-4480-91f9-396b0a03304a)
 
 ---
 
