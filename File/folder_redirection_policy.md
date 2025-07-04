@@ -1,8 +1,4 @@
 
-🔍 Logon Event Auditing / Anmeldeereignisse überwachen
-
-📄 logon_event_auditing.md – Dokumentation (Deutsch 🇩🇪 + Englisch 🇬🇧)
-
 
 # 🔍 Logon Event Auditing / Anmeldeereignisse überwachen
 
