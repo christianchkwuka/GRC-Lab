@@ -77,8 +77,4 @@ Screen lock enforces automatic session locking after inactivity, preventing unau
 
 
 
-Tools
 
-
-
-Ch
