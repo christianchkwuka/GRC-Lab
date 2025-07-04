@@ -100,7 +100,7 @@ This repository documents a Windows Server-based environment for hands-on implem
 
 ---
 
-Letzte Aktualisierung: `{{DATUM}}`
+Letzte Aktualisierung: 04-07-2025
 
 
 
