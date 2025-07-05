@@ -28,8 +28,7 @@ Legal Login Banner	A.18.1.2	ORP.4.A12	Art. 13, 32	AC-8	✅	🔗
 
 BitLocker Encryption	A.10.1.1 / A.10.1.2	SYS.2.1.A16	Art. 32 lit. a/c	SC-12 / SC-28 / MP-5	✅	🔗
 
-Software Restriction Policy	A.12.6.2	SYS.1.2.A21	Art. 25, 32	SI-7 / CM-7	✅	
-🔗
+Software Restriction Policy	A.12.6.2	SYS.1.2.A21	Art. 25, 32	SI-7 / CM-7	✅ 
 
 📋 Kontroll-Checklisten pro Norm
 ✅ ISO/IEC 27001:2022 (Auswahl)
