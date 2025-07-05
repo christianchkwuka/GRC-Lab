@@ -37,6 +37,7 @@ Verhindern der Nutzung nicht autorisierter USB-Speichergeräte zum Schutz vor Da
 
 ## 📸 Beweis / Evidence
 
+![USB-Zugriffskontrolle](https://github.com/user-attachments/assets/44abe31d-1238-4355-85a7-0964fbfec0db)
 
 
 ---
