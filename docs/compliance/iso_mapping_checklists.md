@@ -1,5 +1,7 @@
 🗂️ ISO Mapping & Kontrollübersicht (GRC-Lab)
+
 🎯 Ziel
+
 Diese Übersicht dient dem Nachweis, dass alle konfigurierten Gruppenrichtlinien (GPOs) und technischen Maßnahmen im GRC-Lab den Anforderungen aus ISO/IEC 27001:2022, BSI IT-Grundschutz, DSGVO und NIST 800-53 entsprechen.
 
 Sie unterstützt Auditoren, Prüfer und Sicherheitsverantwortliche bei der Beurteilung der technischen Umsetzung von Kontrollen im Lab.
