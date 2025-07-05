@@ -8,25 +8,21 @@ Diese Übersicht dient dem Nachweis, dass alle konfigurierten Gruppenrichtlinien
 
 🧩 Übersicht: Mapping von GPOs zu Compliance-Kontrollen
 
-GPO-Richtlinie	ISO/IEC 27001	BSI IT-Grundschutz	DSGVO	NIST 800-53	Status	Link zum Auditbericht
+## 🧩 Übersicht: Mapping von GPOs zu Compliance-Kontrollen
 
-Passwort-Richtlinie	A.9.2.1 / A.9.2.3	SYS.1.2.A15	Art. 32 Abs. 1 lit. b	IA-5	✅	🔗
+| GPO-Richtlinie              | ISO/IEC 27001         | BSI IT-Grundschutz | DSGVO                   | NIST 800-53             | Status | Link zum Auditbericht            |
+|----------------------------|------------------------|--------------------|--------------------------|--------------------------|--------|----------------------------------|
+| Passwort-Richtlinie        | A.9.2.1 / A.9.2.3      | SYS.1.2.A15        | Art. 32 Abs. 1 lit. b    | IA-5                     | ✅     | [🔗](../audit_password_policy.md) |
+| Account Lockout Policy     | A.9.4.2               | SYS.1.1.A6         | Art. 32 Abs. 2           | AC-7                     | ✅     | [🔗](../audit_account_lockout_policy.md) |
+| USB Access Control         | A.9.4.1 / A.13.2.1     | ORP.4.A6           | Art. 25, 32              | MP-7 / AC-19             | ✅     | [🔗](../audit_usb_access_policy.md) |
+| Bildschirm-Sperre          | A.11.2.9              | SYS.1.1.A13        | Art. 5, 32               | AC-11                    | ✅     | [🔗](../audit_screen_lock_policy.md) |
+| Remote Desktop             | A.9.2.3 / A.13.1.1     | SYS.1.3.A15        | Art. 32 Abs. 1 lit. a    | AC-17 / SC-10            | ✅     | [🔗](../audit_remote_desktop_policy.md) |
+| Datei-/Ordnerumleitung     | A.8.2.3 / A.9.4.1      | CON.1.A6           | Art. 5, 32               | SC-12 / MP-5             | ✅     | [🔗](../audit_file_folder_redirection_policy.md) |
+| Logon Event Auditing       | A.12.4.1 / A.12.4.3    | SYS.1.5.A1 / A4    | Art. 30, 32              | AU-2 / AU-6              | ✅     | [🔗](../audit_logon_event_auditing.md) |
+| Legal Login Banner         | A.18.1.2              | ORP.4.A12          | Art. 13, 32              | AC-8                     | ✅     | [🔗](../audit_legal_banner_policy.md) |
+| BitLocker Encryption       | A.10.1.1 / A.10.1.2    | SYS.2.1.A16        | Art. 32 lit. a/c         | SC-12 / SC-28 / MP-5     | ✅     | [🔗](../audit_bitlocker_encryption_policy.md) |
+| Software Restriction Policy| A.12.6.2              | SYS.1.2.A21        | Art. 25, 32              | SI-7 / CM-7              | ✅     | [🔗](../audit_software_restriction_policy.md) |
 
-Account Lockout Policy	A.9.4.2	SYS.1.1.A6	Art. 32 Abs. 2	AC-7	✅	🔗
-
-USB Access Control	A.9.4.1 / A.13.2.1	ORP.4.A6	Art. 25, 32	MP-7 / AC-19	✅	🔗
-
-Bildschirm-Sperre	A.11.2.9	SYS.1.1.A13	Art. 5, 32	AC-11	✅	🔗
-
-Remote Desktop	A.9.2.3 / A.13.1.1	SYS.1.3.A15	Art. 32 Abs. 1 lit. a	AC-17 / SC-10	✅	🔗
-
-Datei-/Ordnerumleitung	A.8.2.3 / A.9.4.1	CON.1.A6	Art. 5, 32	SC-12 / MP-5	✅	🔗
-
-Logon Event Auditing	A.12.4.1 / A.12.4.3	SYS.1.5.A1 / A4	Art. 30, 32	AU-2 / AU-6	✅	🔗
-
-Legal Login Banner	A.18.1.2	ORP.4.A12	Art. 13, 32	AC-8	✅	🔗
-
-BitLocker Encryption	A.10.1.1 / A.10.1.2	SYS.2.1.A16	Art. 32 lit. a/c	SC-12 / SC-28 / MP-5	✅	🔗
 
 Software Restriction Policy	A.12.6.2	SYS.1.2.A21	Art. 25, 32	SI-7 / CM-7	✅ [Auditbericht – account_lockout_policy](../account_lockout_policy.md)
 
