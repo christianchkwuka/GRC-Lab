@@ -12,14 +12,23 @@ Diese Übersicht dient dazu, alle implementierten Gruppenrichtlinien (GPOs) im W
 GPO-Richtlinie ISO/IEC 27001:2022 BSI IT-Grundschutz DSGVO NIST 800-53
 
 Passwort-Richtlinie A.9.2.1 / A.9.2.3 SYS.1.2.A15 Art. 32 Abs. 1 lit. b IA-5
+
 Account Lockout A.9.2.1 / A.9.4.2 SYS.1.1.A6 Art. 32 Abs. 2 AC-7
+
 USB-Zugriff (Sperre) A.9.2.1 / A.9.4.1 ORP.4.A6 Art. 25 / 32 DSGVO MP-7 / AC-19
+
 Bildschirm-Sperre A.11.2.8 SYS.1.1.A13 Art. 5 / 32 AC-11
+
 Remote Desktop A.9.2.3 / A.13.1.1 SYS.1.3.A15 Art. 32 Abs. 1 lit. a AC-17 / SC-10
+
 Datei-/Ordnerumleitung A.8.2.3 / A.9.4.1 CON.1.A6 Art. 5 / 32 SC-12 / MP-5
+
 Anmeldeereignisse protokollieren A.12.4.1 / A.12.4.3 SYS.1.5.A1 / A4 Art. 30 / 32 DSGVO AU-2 / AU-6
+
 Legal Login Banner A.18.1.2 ORP.4.A12 Art. 13 / Art. 32 DSGVO AC-8
+
 BitLocker (Verschlüsselung) A.10.1.1 / A.10.1.2 SYS.2.1.A16 Art. 32 Abs. 1 lit. a/c SC-12 / SC-28 / MP-5
+
 Software-Restriktion A.12.6.2 SYS.1.2.A21 Art. 25 / 32 DSGVO SI-7 / CM-7
 
 
