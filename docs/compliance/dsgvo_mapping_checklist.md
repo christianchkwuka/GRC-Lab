@@ -23,22 +23,3 @@ Rechtlicher Anmeldehinweis (Art. 13 DSGVO)	✅	Interaktives Banner mit Nutzungsb
 Backup der Benutzerdateien	✅	Umgeleitet auf File-Server mit Sicherung
 Rollen- und Rechtemanagement in AD	✅	„Least Privilege“ via OU / Gruppen
 Technisches Monitoring (SIEM via Wazuh)	🟡 In Arbeit	Teilweise eingerichtet, Alerts folgen noch
-
-📁 Speicherort für GitHub
-docs/compliance/dsgvo_mapping_checklist.md
-
-Screenshots: assets/screenshots/compliance/dsgvo/
-
-📝 Beispiel Commit Message
-bash
-Copy
-Edit
-Add DSGVO compliance checklist and mapping overview for GRC Lab
-📎 Nächste Schritte (optional)
-🔄 Erweiterbar um:
-
-Datenschutz-Folgenabschätzung (DSFA) simulieren
-
-Verzeichnis von Verarbeitungstätigkeiten (Excel/Markdown-Vorlage)
-
-DSGVO-Awareness Training + Benutzerbestätigung (via Logon-Script)
