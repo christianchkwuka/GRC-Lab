@@ -85,8 +85,3 @@ Die Remotedesktop-Richtlinie erfüllt alle Anforderungen an eine sichere Remotev
 
 
 
-Tools
-
-
-
-Chat
