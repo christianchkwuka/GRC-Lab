@@ -24,8 +24,6 @@ Diese Übersicht dient dem Nachweis, dass alle konfigurierten Gruppenrichtlinien
 | Software Restriction Policy| A.12.6.2              | SYS.1.2.A21        | Art. 25, 32              | SI-7 / CM-7              | ✅     | [🔗](../audit_software_restriction_policy.md) |
 
 
-Software Restriction Policy	A.12.6.2	SYS.1.2.A21	Art. 25, 32	SI-7 / CM-7	✅ [Auditbericht – account_lockout_policy](../account_lockout_policy.md)
-
 📋 Kontroll-Checklisten pro Norm
 ✅ ISO/IEC 27001:2022 (Auswahl)
  A.9 – Zugriffskontrolle
@@ -39,6 +37,7 @@ Software Restriction Policy	A.12.6.2	SYS.1.2.A21	Art. 25, 32	SI-7 / CM-7	✅ [Au
  A.18 – Einhaltung gesetzlicher Anforderungen (z. B. Banner)
 
 ✅ BSI IT-Grundschutz (Kernbausteine)
+
  SYS.1.1 – Benutzer- und Rechteverwaltung
 
  SYS.1.2 – Arbeitsplatzrechner absichern
