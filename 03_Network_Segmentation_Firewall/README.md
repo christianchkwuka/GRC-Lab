@@ -9,13 +9,24 @@ Diese Dokumentation zeigt die Umsetzung von Netzwerksegmentierung und Firewall-R
 
 | Zone         | Beschreibung (DE)                            | Description (EN)                         |
 |--------------|-----------------------------------------------|-------------------------------------------|
-| [DMZ](./rules/firewall_dmz.md)       | Web-Zugang für DMZ-Server, alles andere blockiert | Web access for DMZ servers, all else blocked |
-| [HR](./rules/firewall_hr.md)         | HTTP/HTTPS erlaubt, sonst gesperrt       | HTTP/HTTPS allowed, all else denied       |
-| [Finance](./rules/firewall_finance.md)| Port 3306 blockiert, eingeschränkter Datenbankzugriff | Port 3306 blocked, restricted DB access   |
-| [IT](./rules/firewall_it.md)         | Volle Kontrolle, Logging aktiviert       | Full access, logging enabled              |
-| [Sales](./rules/firewall_sales.md)   | Nur Web-Zugriff erlaubt                  | Only web access allowed                   |
+| ![dmz_firewall_rule_3](https://github.com/user-attachments/assets/38b533f9-d9c5-427a-9a56-fe9d83a93354)
+       | Web-Zugang für DMZ-Server, alles andere blockiert | Web access for DMZ servers, all else blocked |
+| ![firewall_hr](https://github.com/user-attachments/assets/ba88ee1f-8364-4f74-8c79-8c332ed4ba58)
+         | HTTP/HTTPS erlaubt, sonst gesperrt       | HTTP/HTTPS allowed, all else denied       |
+| ![firewall_financepng](https://github.com/user-attachments/assets/b52fae03-f152-483a-98d7-ca5084ab0f01)
+| Port 3306 blockiert, eingeschränkter Datenbankzugriff | Port 3306 blocked, restricted DB access   |
+| ![firewall_it](https://github.com/user-attachments/assets/77686b8e-e567-4923-a63a-637a40d2f0f8)
+         | Volle Kontrolle, Logging aktiviert       | Full access, logging enabled              |
+| ![firewall_sales](https://github.com/user-attachments/assets/466e64af-edc1-46bc-9640-84de0a241648)
+   | Nur Web-Zugriff erlaubt                  | Only web access allowed                   |
 
 ---
+
+
+
+
+
+
 
 ## 🎯 Ziel / Goal
 
