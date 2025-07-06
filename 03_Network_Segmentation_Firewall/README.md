@@ -1,84 +1,78 @@
+# 🛡️ GRC-Laborumgebung mit Windows Server, pfSense, Kali Linux & Wazuh
 
-# 🔐 GRC-Firewall-Regeln mit pfSense
+## 🇩🇪 Beschreibung (Deutsch)
 
-Diese Dokumentation zeigt die Umsetzung von Netzwerksegmentierung und Firewall-Regeln in einer GRC-Testumgebung mit **pfSense**. Ziel ist es, gemäß ISO 27001, BSI IT-Grundschutz, NIST 800-53 und DSGVO Sicherheitskontrollen zu simulieren und zu dokumentieren.
+Willkommen in meinem praktischen GRC-Labor (Governance, Risk & Compliance), das speziell für IT-Audits, Sicherheitstrainings und ISO 27001/BSI/NIST/DSGVO-Mapping entwickelt wurde. Dieses Labor läuft vollständig in VirtualBox und simuliert eine realistische Unternehmensumgebung mit verschiedenen Netzwerken und Sicherheitszonen.
 
----
+### 💡 Ziel dieses Projekts
 
-## 📁 Inhaltsverzeichnis / Table of Contents
-
-| Zone         | Beschreibung (DE)                            | Description (EN)                         |
-|--------------|-----------------------------------------------|-------------------------------------------|
-| ![dmz_firewall_rule_2](https://github.com/user-attachments/assets/967508c3-0e16-4096-bb78-17ac95c3fc4e)
-       | Web-Zugang für DMZ-Server, alles andere blockiert | Web access for DMZ servers, all else blocked |
-| ![firewall_hr](https://github.com/user-attachments/assets/ba88ee1f-8364-4f74-8c79-8c332ed4ba58)
-         | HTTP/HTTPS erlaubt, sonst gesperrt       | HTTP/HTTPS allowed, all else denied       |
-| ![firewall_financepng](https://github.com/user-attachments/assets/b52fae03-f152-483a-98d7-ca5084ab0f01)
-| Port 3306 blockiert, eingeschränkter Datenbankzugriff | Port 3306 blocked, restricted DB access   |
-| ![firewall_it](https://github.com/user-attachments/assets/77686b8e-e567-4923-a63a-637a40d2f0f8)
-         | Volle Kontrolle, Logging aktiviert       | Full access, logging enabled              |
-| ![firewall_sales](https://github.com/user-attachments/assets/466e64af-edc1-46bc-9640-84de0a241648)
-   | Nur Web-Zugriff erlaubt                  | Only web access allowed                   |
+- ISO 27001-, BSI- und NIST-Kontrollen in einer Lab-Umgebung nachvollziehen
+- Sicherheitsrichtlinien mit GPOs umsetzen (z. B. Passwort-, USB-, RDP-Richtlinien)
+- pfSense als Firewall für Netzwerksegmentierung und IDS/IPS einsetzen
+- Wazuh als zentrales SIEM zum Log-Monitoring konfigurieren
+- Kali Linux für Schwachstellenscans, Audit-Tests und Penetrationstests verwenden
 
 ---
 
+## 🧱 Infrastrukturübersicht
 
-
-
-
-
-
-## 🎯 Ziel / Goal
-
-Implementierung einer standardkonformen Netzwerksegmentierung und Zugriffskontrolle mit:
-
-- 🔐 **Firewall-Regeln nach dem "Default Deny"-Prinzip**
-- 📚 **Mapping auf relevante Sicherheitsstandards**
-- 📊 **Beobachtung & Logging mit Wazuh SIEM**
-- 🧪 **Tests mit Kali Linux (z. B. Portscan, DNS Tunneling)**
+| Komponente        | Beschreibung                                 |
+|-------------------|----------------------------------------------|
+| 🖥️ Windows Server | Active Directory, GPOs, Gruppenrichtlinien   |
+| 🔥 pfSense        | Netzwerksegmentierung, Firewall, Suricata    |
+| 🐧 Kali Linux     | Penetrationstests, Nmap, Schwachstellenprüfung |
+| 🐙 Ubuntu         | Wazuh SIEM-Server zur zentralen Überwachung  |
 
 ---
 
-## 📑 Sicherheits-Standards Mapping
+## 📁 Dokumentierte Sicherheitsbereiche (GPOs)
 
-| Standard         | Fokus                              | Umsetzung in diesem Projekt                    |
-|------------------|-------------------------------------|------------------------------------------------|
-| **ISO 27001:2022** | A.13 – Netzwerksicherheit           | Segmentierung, Zugriffskontrolle, Logging      |
-| **BSI IT-Grundschutz** | OPS.1.1.1 / SYS.1.3.1              | Firewall-Regeln, Netzzonierung, DMZ            |
-| **NIST SP 800-53** | SC-7, AC-4, SI-4                    | Boundary Protection, Access Control, Audit     |
-| **DSGVO**         | Art. 25, Art. 32                    | Datenminimierung, Sicherheit der Verarbeitung  |
-
----
-
-## 🛠 Tools im Einsatz
-
-- **pfSense** → Firewall- und VLAN-Management
-- **Kali Linux** → Angriffssimulation
-- **Ubuntu (Wazuh)** → SIEM/Logging
-- **Windows Server** → Zielsysteme für Compliance-Tests
+- [x] Passwort-Richtlinie (Password Policy)
+- [x] USB-Zugriffskontrolle (USB Access Control)
+- [x] Bildschirmsperre (Screen Lock Policy)
+- [x] RDP-Sicherheit (Remote Desktop Restrictions)
+- [x] Ereignisprotokollierung (Audit Event Log)
+- [x] BitLocker-Verschlüsselung
+- [ ] Weitere folgen...
 
 ---
 
-## 🔍 Beispiel: Firewall-Dokumentation mit Mapping
+## 🔍 Compliance-Frameworks & Mapping
 
-📄 Beispiel-Datei: `firewall_sales.md`
+Dieses Lab simuliert und dokumentiert Kontrollen aus folgenden Standards:
 
-```markdown
-## SALES Firewall-Regel
+| Framework | Fokus |
+|----------|-------|
+| ✅ ISO/IEC 27001:2022 | Informationssicherheit (Annex A) |
+| ✅ BSI IT-Grundschutz | Grundschutz-Bausteine |
+| ✅ NIST SP 800-53    | Technische und administrative Kontrollen |
+| ✅ DSGVO              | Datenschutz und Zugriffsschutz |
 
-**Ziel:** Nur Webzugriff (HTTP/HTTPS) für Sales
+---
 
-- Interface: SALES
-- Protokoll: TCP
-- Source: SALES Subnet
-- Destination: Any
-- Ports: 80-443 (HTTP/HTTPS)
+## 🌍 English Summary
 
-### ✅ Mapping:
+This is a practical GRC (Governance, Risk & Compliance) lab environment running entirely in VirtualBox, focused on simulating ISO 27001, BSI, NIST, and GDPR-compliant setups using:
 
-| Standard     | Regel                         |
-|--------------|-------------------------------|
-| ISO 27001    | A.13.1.1 - Netzwerksteuerung   |
-| BSI          | OPS.1.1.1.A8 - Ausgehende Filterung |
-| NIST         | SC-7 - Boundary Protection     |
-| DSGVO        | Art. 32 – Sicherheit der Verarbeitung |
+- **Windows Server** for GPO and Active Directory policy enforcement
+- **pfSense Firewall** for segmentation, rules, IDS/IPS with Suricata
+- **Kali Linux** for vulnerability scanning and penetration testing
+- **Ubuntu Wazuh Server** for centralized log management and SIEM
+
+---
+
+## 📎 Hinweise
+
+- 📂 Screenshots und Markdown-Dokumentation sind im Ordner `/documentation`
+- 🛠️ GPO-Richtlinien sind im Ordner `/gpo-templates`
+- 🔍 IDS/IPS-Tests sind unter `/network-tests` dokumentiert
+
+---
+
+## 📌 Autor
+
+**Christian Chukwuka**  
+GRC & Cybersecurity Enthusiast 🇩🇪🇮🇪  
+M.Sc. Data Analytics | CISA | CISM | ISO 27001 Lead Auditor  
+[LinkedIn-Profil oder GitHub-Link hier einfügen]
+
