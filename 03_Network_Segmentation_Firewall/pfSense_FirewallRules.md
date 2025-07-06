@@ -92,13 +92,16 @@ Diese Dokumentation beschreibt die Netzwerksegmentierung und das Firewall-Regelw
 
 ## 📸 Screenshots (Regeln je VLAN)
 
-- ![Firewall_DMZ](../screenshots/firewall_dmz.png)
+![dmz_firewall_rule_3](https://github.com/user-attachments/assets/38b533f9-d9c5-427a-9a56-fe9d83a93354)
+
 ![firewall_hr](https://github.com/user-attachments/assets/ba88ee1f-8364-4f74-8c79-8c332ed4ba58)
 
-- ![Firewall_Finance](../screenshots/firewall_finance.png)
+![firewall_financepng](https://github.com/user-attachments/assets/b52fae03-f152-483a-98d7-ca5084ab0f01)
+
 ![firewall_it](https://github.com/user-attachments/assets/77686b8e-e567-4923-a63a-637a40d2f0f8)
 
-- ![Firewall_Sales](../screenshots/firewall_sales.png)
+![firewall_sales](https://github.com/user-attachments/assets/466e64af-edc1-46bc-9640-84de0a241648)
+
 
 ---
 
