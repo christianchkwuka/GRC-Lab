@@ -1,1 +1,149 @@
+⚙️ Nmap-Portscan Dokumentation (Kali ➔ pfSense / Ziel: 192.168.56.1)
+
+🔍 Befehl:
+
+sudo nmap -sS -T4 192.168.56.1
+
+🔢 Erklärung:
+
+Option
+
+Bedeutung
+
+sudo
+
+Root-Rechte nötig für SYN-Scan
+
+-sS
+
+SYN-Scan ("Stealth Mode") zur Identifikation offener Ports
+
+-T4
+
+Timing-Template: Schnell & stabil
+
+192.168.56.1
+
+Ziel-IP, wahrscheinlich das pfSense LAN Interface
+
+🔧 Ergebnisse:
+
+Port
+
+Status
+
+Dienst (Service)
+
+Anmerkung
+
+135/tcp
+
+open
+
+msrpc
+
+Windows Remote Procedure Call
+
+139/tcp
+
+open
+
+netbios-ssn
+
+Veraltetes Filesharing-Protokoll
+
+445/tcp
+
+open
+
+microsoft-ds
+
+SMB, Datei-/Druckerfreigabe, pot. Schwachstelle
+
+912/tcp
+
+open
+
+iss-realsecure
+
+❌ Nicht identifiziert (unbekannter Dienst)
+
+3006/tcp
+
+open
+
+apex-mesh
+
+❌ Nicht identifiziert (spez. Anwendung?)
+
+3306/tcp
+
+open
+
+mysql
+
+Datenbankdienst, Zugriffsschutz prüfen
+
+5432/tcp
+
+open
+
+postgresql
+
+Datenbankdienst, Zugriffsschutz prüfen
+
+16992/tcp
+
+open
+
+amt-soap-http
+
+Intel AMT Remote Access, ggf. abschalten
+
+🔓 Sicherheitsbeurteilung:
+
+❌ Veraltete Protokolle wie NetBIOS sollten deaktiviert werden
+
+⛔ Datenbankdienste nicht direkt zugänglich machen ohne Authentifizierung
+
+🔐 Remote Management (Intel AMT) nur bei Bedarf aktivieren & absichern
+
+✅ Mapping auf Sicherheitsstandards
+
+✔️ ISO/IEC 27001:2022
+
+A.13.1.1 Netzwerkschutz gegen Bedrohungen
+
+A.13.1.2 Sichere Netzwerkdienste
+
+A.12.6.1 Management technischer Schwachstellen
+
+✔️ BSI IT-Grundschutz (KAP. NET.1 & SYS.1)
+
+NET.1.2.A2: Einschränkung von unnötigen Ports & Protokollen
+
+SYS.1.1.A5: Prüfung auf aktive Netzwerkdienste
+
+✔️ NIST SP 800-53 (Rev. 5)
+
+CM-7 (Least Functionality): Nur erforderliche Dienste aktiv
+
+AC-4 (Information Flow Enforcement): Kontrolle von Netzwerkflüssen
+
+SC-7 (Boundary Protection): Firewalls & Segmentierung
+
+✔️ DSGVO (Datenschutz-Folgenabschätzung)
+
+Artikel 32: Sicherheit der Verarbeitung
+
+Schutz personenbezogener Daten durch Netzwerksicherheit
+
+📂 Empfehlung für GitHub-Dokumentation:
+
+Ordner: network_scans/
+
+Datei: nmap_192.168.56.1.md
+
+Screenshot hinzufügen: screenshots/nmap_192_168_56_1.png
+
 
