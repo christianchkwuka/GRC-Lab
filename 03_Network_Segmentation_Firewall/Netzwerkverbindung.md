@@ -17,8 +17,11 @@ Verbindung zwischen Kali Linux und pfSense über internes Netzwerk (`grc-lab`), 
 ## Manuelle Netzwerkeinrichtung (Kali)
 
 sudo ip addr add 192.168.56.110/24 dev eth2
+
 sudo ip route add default via 192.168.56.100
+
 echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
+
 Verbindungen testen
 
 ping 192.168.56.100  # pfSense
