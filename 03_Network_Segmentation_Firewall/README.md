@@ -9,7 +9,7 @@ Diese Dokumentation zeigt die Umsetzung von Netzwerksegmentierung und Firewall-R
 
 | Zone         | Beschreibung (DE)                            | Description (EN)                         |
 |--------------|-----------------------------------------------|-------------------------------------------|
-| ![dmz_firewall_rule_3](https://github.com/user-attachments/assets/38b533f9-d9c5-427a-9a56-fe9d83a93354)
+| ![DMZ Firewall](screenshots/firewall/firewall_dmz.png)
        | Web-Zugang für DMZ-Server, alles andere blockiert | Web access for DMZ servers, all else blocked |
 | ![firewall_hr](https://github.com/user-attachments/assets/ba88ee1f-8364-4f74-8c79-8c332ed4ba58)
          | HTTP/HTTPS erlaubt, sonst gesperrt       | HTTP/HTTPS allowed, all else denied       |
