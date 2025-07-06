@@ -1,147 +1,70 @@
-⚙️ Nmap-Portscan Dokumentation (Kali ➔ pfSense / Ziel: 192.168.56.1)
+⚙️ Nmap-Portscan Dokumentation
+Quelle: Kali Linux
+Zielsystem: pfSense (IP: 192.168.56.1)
+Zweck: Erkennung offener Dienste zur Bewertung von Angriffsflächen
 
-🔍 Befehl:
-
+🔍 Scanbefehl
+bash
+Copy
+Edit
 sudo nmap -sS -T4 192.168.56.1
+Option	Beschreibung
+sudo	Root-Rechte erforderlich für SYN-basierte Scans
+-sS	TCP SYN-Scan („Stealth Scan“), sendet nur SYN-Pakete
+-T4	Aggressives Timing-Profil für schnellere Scandurchführung
+192.168.56.1	Ziel-IP-Adresse des pfSense LAN-Interfaces
 
-🔢 Erklärung:
+📊 Scan-Ergebnisse (Auszug)
+Port	Status	Dienst (Service)	Bewertung / Hinweise
+135/tcp	open	msrpc	RPC-Dienst von Windows – häufig Ziel bei Exploits
+139/tcp	open	netbios-ssn	Veraltetes Protokoll – sollte deaktiviert werden
+445/tcp	open	microsoft-ds	SMB – potenzielles Ziel für Ransomware
+912/tcp	open	iss-realsecure	Unbekannter Dienst – Analyse notwendig
+3006/tcp	open	apex-mesh	Mögliche proprietäre Anwendung – Zugriffsprüfung empfohlen
+3306/tcp	open	MySQL	Sensibler Dienst – Authentifizierung und Verschlüsselung prüfen
+5432/tcp	open	PostgreSQL	Wie oben – sicher konfigurieren
+16992/tcp	open	amt-soap-http	Intel AMT Remote Access – deaktivieren, wenn nicht benötigt
 
-Option
+🛡️ Sicherheitsbeurteilung
+❌ NetBIOS (Port 139): Veraltet – sollte deaktiviert werden
 
-Bedeutung
+⛔ Datenbankports (3306, 5432): Zugriff nur über interne IPs mit Authentifizierung erlauben
 
-sudo
+⚠️ Intel AMT (Port 16992): Hohe Angriffswahrscheinlichkeit – nur bei Bedarf aktiv & gehärtet einsetzen
 
-Root-Rechte nötig für SYN-Scan
+📌 Nicht identifizierte Dienste (912, 3006): Genau analysieren, ggf. blockieren
 
--sS
-
-SYN-Scan ("Stealth Mode") zur Identifikation offener Ports
-
--T4
-
-Timing-Template: Schnell & stabil
-
-192.168.56.1
-
-Ziel-IP, wahrscheinlich das pfSense LAN Interface
-
-🔧 Ergebnisse:
-
-Port
-
-Status
-
-Dienst (Service)
-
-Anmerkung
-
-135/tcp
-
-open
-
-msrpc
-
-Windows Remote Procedure Call
-
-139/tcp
-
-open
-
-netbios-ssn
-
-Veraltetes Filesharing-Protokoll
-
-445/tcp
-
-open
-
-microsoft-ds
-
-SMB, Datei-/Druckerfreigabe, pot. Schwachstelle
-
-912/tcp
-
-open
-
-iss-realsecure
-
-❌ Nicht identifiziert (unbekannter Dienst)
-
-3006/tcp
-
-open
-
-apex-mesh
-
-❌ Nicht identifiziert (spez. Anwendung?)
-
-3306/tcp
-
-open
-
-mysql
-
-Datenbankdienst, Zugriffsschutz prüfen
-
-5432/tcp
-
-open
-
-postgresql
-
-Datenbankdienst, Zugriffsschutz prüfen
-
-16992/tcp
-
-open
-
-amt-soap-http
-
-Intel AMT Remote Access, ggf. abschalten
-
-🔓 Sicherheitsbeurteilung:
-
-❌ Veraltete Protokolle wie NetBIOS sollten deaktiviert werden
-
-⛔ Datenbankdienste nicht direkt zugänglich machen ohne Authentifizierung
-
-🔐 Remote Management (Intel AMT) nur bei Bedarf aktivieren & absichern
-
-✅ Mapping auf Sicherheitsstandards
-
+📘 Sicherheitsstandard-Zuordnung (Mapping)
 ✔️ ISO/IEC 27001:2022
+Kontrolle	Beschreibung
+A.13.1.1	Schutz vor Netzwerkbedrohungen
+A.13.1.2	Sicherstellung vertrauenswürdiger Netzwerke
+A.12.6.1	Schwachstellenmanagement für bekannte Dienste
 
-A.13.1.1 Netzwerkschutz gegen Bedrohungen
+✔️ BSI IT-Grundschutz
+Baustein	Maßnahme
+NET.1.2.A2	Deaktivierung unnötiger Dienste und Ports
+SYS.1.1.A5	Regelmäßige Prüfung laufender Netzwerkdienste
 
-A.13.1.2 Sichere Netzwerkdienste
+✔️ NIST SP 800-53 Rev. 5
+Kontrolle	Bedeutung
+CM-7	Beschränkung auf unbedingt notwendige Dienste
+AC-4	Kontrolle über Informationsflüsse zwischen Zonen
+SC-7	Netzwerkgrenzenschutz durch Firewalls und Segmentierung
 
-A.12.6.1 Management technischer Schwachstellen
+✔️ DSGVO (Art. 32)
+Sicherstellung des Schutzes personenbezogener Daten durch technische Maßnahmen wie Firewall-Regeln, Zugriffsbeschränkungen und Verschlüsselung
 
-✔️ BSI IT-Grundschutz (KAP. NET.1 & SYS.1)
-
-NET.1.2.A2: Einschränkung von unnötigen Ports & Protokollen
-
-SYS.1.1.A5: Prüfung auf aktive Netzwerkdienste
-
-✔️ NIST SP 800-53 (Rev. 5)
-
-CM-7 (Least Functionality): Nur erforderliche Dienste aktiv
-
-AC-4 (Information Flow Enforcement): Kontrolle von Netzwerkflüssen
-
-SC-7 (Boundary Protection): Firewalls & Segmentierung
-
-✔️ DSGVO (Datenschutz-Folgenabschätzung)
-
-Artikel 32: Sicherheit der Verarbeitung
-
-Schutz personenbezogener Daten durch Netzwerksicherheit
-
-📂 Empfehlung für GitHub-Dokumentation:
-
+🗂️ GitHub-Dokumentation (Empfohlenes Format)
 Ordner: network_scans/
 
-Datei: nmap_192.168.56.1.md
+Dateiname: nmap_192.168.56.1.md
 
-Screenshot hinzufügen: screenshots/nmap_192_168_56_1.png
+Screenshot-Pfad: screenshots/nmap_192_168_56_1.png
+
+🔁 Empfehlung
+Regelmäßige Wiederholung des Scans zur Erkennung unerlaubter Dienste
+
+Änderungsüberwachung: Neue oder entfernte Ports können auf Konfigurationsänderungen oder Kompromittierung hinweisen
+
+Monitoring Integration: Ergebnisse in Wazuh/ELK weiterverwenden
