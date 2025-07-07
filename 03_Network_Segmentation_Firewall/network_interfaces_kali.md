@@ -14,4 +14,5 @@
 ```bash
 ip a
 
-![networt_inface](https://github.com/user-attachments/assets/5c3732f4-2348-461f-80e3-5e926fdfdcc2)
+![networt_inface](https://github.com/user-attachments/assets/a365c262-9228-4574-aab9-162948a8ec2f)
+
