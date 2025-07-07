@@ -1,44 +1,51 @@
-Empfehlungen
+# 🛡️ Suricata Regelquellen & Globale Einstellungen (pfSense IDS/IPS)
 
-🔐 Suricata Regelquellen & Globale Einstellungen (pfSense IDS/IPS)
+Diese Datei dokumentiert die aktivierten Regelquellen und globalen Logging-Optionen von Suricata auf pfSense. Zusätzlich erfolgt ein Mapping auf relevante Sicherheitsstandards wie ISO 27001, BSI IT-Grundschutz, NIST SP 800-53 und DSGVO.
 
-Suricata Rule Sources & Global Settings (pfSense IDS/IPS)
+---
 
-✅ Aktivierte Regelquellen / Enabled Rule Sources
-Regelquelle / Rule Source	Status	Beschreibung / Description
-ETOpen (Emerging Threats Open)	✅ Aktiviert	🟢 Freie Open-Source-Regeln, gute Basisabdeckung
-🟢 Good free base coverage of threats
-Feodo Tracker (Botnet C2 IPs)	✅ Aktiviert	🛑 Erkennt Dridex / Emotet / Heodo C2-Kommunikation
-🛑 Detects Botnet C2 connections
-ETPro	❌ Deaktiviert	🔒 Kommerziell, umfassende Regeln
-🔒 Commercial version with enhanced detection
-Snort / GPLv2 / Registered Rules	❌ Deaktiviert	🔒 Benötigt Registrierung / Lizenz
-🔒 Requires Snort account / license
+## ✅ Aktivierte Regelquellen
 
-📦 Globale Einstellungen / Global Logging Settings
+| Regelquelle                  | Status      | Beschreibung                                                                 |
+|-----------------------------|-------------|------------------------------------------------------------------------------|
+| ETOpen (Emerging Threats)   | ✅ Aktiv     | 🟢 Freie Open-Source-Regeln mit solider Basisabdeckung                       |
+| Feodo Tracker (Botnet C2 IP)| ✅ Aktiv     | 🛑 Erkennt Dridex / Emotet / Heodo Botnet-Kommunikation                      |
+| ETPro                        | ❌ Deaktiviert| 🔒 Kommerziell, umfassendere Abdeckung, Registrierung & Lizenz erforderlich |
+| Snort Rules                 | ❌ Deaktiviert| ❌ Benötigt Registrierung oder Lizenz                                        |
+| Snort GPLv2 Community Rules | ❌ Deaktiviert| 🟠 Freie Version, aber nicht aktiviert                                       |
 
-Einstellung / Setting	Status	Empfehlung / Recommendation
-Regelupdate (Update Interval)	❌ NEVER	⛔ Sollte auf 12 HOURS gesetzt werden für automatisierte Updates
-Live Rule Swap	✅ Aktiviert	✅ Verhindert Neustarts beim Regelupdate (Live Reload)
-System Log	✅ Aktiviert	✅ Logs gehen in system.log – zentrale Auswertung möglich
-GeoLite2 IP DB	❌ Deaktiviert	🔍 Aktivieren für Länderbasierte Regeln (Geo-IP Analyse)
-Entferne geblockte Hosts (Remove Blocked)	❌ NEVER	🛠 Setze auf 1 HOUR für bessere Reaktionszeit
+---
 
-🧭 Mapping auf Sicherheitsstandards / Mapping to Security Standards
-Framework	Referenz / Control	Beschreibung / Description
-ISO/IEC 27001:2022	A.12.6.1 – Schwachstellen-Management	Regel-Updates = technisches Schutzmanagement
-A.13.1.1 – Netzwerkschutz	IDS/IPS zur Netzwerksegment-Absicherung
-BSI Grundschutz	SYS.1.5.A6 – Logauswertung	Suricata-Logs zur Angriffserkennung
-NIST SP 800-53	CM-6 / CM-7 – Konfiguration & Dienste	Nur benötigte Regeln/Dienste aktivieren
-SI-4 – System Monitoring	IDS-Protokolle als Teil des Monitorings
-DSGVO / GDPR	Art. 32 – Sicherheit der Verarbeitung	Logging, Botnet-Blocking schützt personenbezogene Daten
+## ⚙️ Globale Logging-Einstellungen
 
-💡 Empfehlungen / Final Recommendations
-📥 Regelupdate aktivieren: Update Interval → 12 HOURS
+| Option                          | Status       | Erklärung                                                                 |
+|--------------------------------|--------------|---------------------------------------------------------------------------|
+| Update Interval                | ❌ NEVER      | ❌ Kein Regelupdate – Empfehlung: alle 12h                                |
+| Update Start Time              | 🕒 00:52      | Startzeit für Updates (24h Format)                                       |
+| Live Rule Swap on Update       | ✅ Aktiviert  | ✅ Verhindert Neustarts bei Regeländerungen                               |
+| Log to System Log              | ✅ Aktiviert  | 📋 Logs werden in Systemlog geschrieben – zentrale Auswertung möglich     |
+| GeoLite2 DB Update             | ❌ Deaktiviert| 🌍 GeoIP-Analyse nicht aktiviert – Empfehlung: aktivieren                 |
+| Remove Blocked Hosts Interval  | ❌ NEVER      | ❌ Host-Blockierung bleibt dauerhaft – Empfehlung: 1 Stunde setzen        |
 
-🌍 GeoLite2 aktivieren, falls Geobasierte Regeln benötigt werden
+---
 
-📊 Eve-JSON Logging aktivieren, für Integration in Wazuh / SIEM
+## 🧩 Mapping auf Sicherheitsstandards
 
-📬 Benachrichtigungen (E-Mail, Telegram) einrichten unter System → Advanced
+| Standard             | Kontrollpunkt               | Beschreibung                                                                 |
+|----------------------|-----------------------------|------------------------------------------------------------------------------|
+| ISO/IEC 27001:2022   | A.12.6.1, A.13.1.1           | Schwachstellen-Management, Netzwerkschutz                                   |
+| BSI IT-Grundschutz   | SYS.1.5, NET.1.4             | IDS/IPS zur Netzwerksicherung, Logging                                      |
+| NIST SP 800-53 Rev.5 | CM-6, SC-7, AU-6             | Angriffserkennung, Netzwerkgrenzen, Sicherheitslog-Management               |
+| DSGVO (EU GDPR)      | Art. 32                      | Sicherheit der Verarbeitung, Logging, Botnet-Erkennung                      |
 
+---
+
+## 💡 Empfehlungen
+
+- ⏱ **Regelupdate aktivieren**: `Update Interval = 12 HOURS`
+- 🔄 **Live Rule Swap aktivieren**: Verhindert Neustarts bei Regeländerung
+- 🌍 **GeoLite2 aktivieren**: Für Länderbasierte Erkennung & GeoIP-Schutz
+- 🧹 **Blocked Hosts Cleanup**: Setze auf `1 HOUR` für bessere Reaktionszeit
+- 📧 **E-Mail Notifications**: Optional einrichten unter System → Advanced → Notifications
+
+---
