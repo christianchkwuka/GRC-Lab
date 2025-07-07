@@ -14,5 +14,6 @@
 ```bash
 ip a
 
-![networt_inface](https://github.com/user-attachments/assets/a365c262-9228-4574-aab9-162948a8ec2f)
+![nmap_port](https://github.com/user-attachments/assets/c64fc53f-12a7-499d-b8b7-11caea9f680e)
+
 
