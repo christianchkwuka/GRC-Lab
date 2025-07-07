@@ -1,7 +1,9 @@
 Empfehlungen
 
 🔐 Suricata Regelquellen & Globale Einstellungen (pfSense IDS/IPS)
+
 Suricata Rule Sources & Global Settings (pfSense IDS/IPS)
+
 ✅ Aktivierte Regelquellen / Enabled Rule Sources
 Regelquelle / Rule Source	Status	Beschreibung / Description
 ETOpen (Emerging Threats Open)	✅ Aktiviert	🟢 Freie Open-Source-Regeln, gute Basisabdeckung
@@ -14,6 +16,7 @@ Snort / GPLv2 / Registered Rules	❌ Deaktiviert	🔒 Benötigt Registrierung / 
 🔒 Requires Snort account / license
 
 📦 Globale Einstellungen / Global Logging Settings
+
 Einstellung / Setting	Status	Empfehlung / Recommendation
 Regelupdate (Update Interval)	❌ NEVER	⛔ Sollte auf 12 HOURS gesetzt werden für automatisierte Updates
 Live Rule Swap	✅ Aktiviert	✅ Verhindert Neustarts beim Regelupdate (Live Reload)
