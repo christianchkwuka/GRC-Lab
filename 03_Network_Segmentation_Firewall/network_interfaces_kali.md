@@ -15,7 +15,8 @@
 ip a
 
 
+![networt_inface](https://github.com/user-attachments/assets/673ae979-7185-408c-8da0-60ddc980e1bd)
 
-![networt_inface](https://github.com/user-attachments/assets/cb870682-bcc7-4eb1-afe9-deaf5f692746)
+
 
 
