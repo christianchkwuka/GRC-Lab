@@ -64,6 +64,6 @@ This documentation describes how to centrally monitor pfSense firewall and Suric
   "timestamp": "2025-07-09T13:01:12.000Z"
 }
 
+![wazuh_log](https://github.com/user-attachments/assets/65d4f589-ce73-4f4c-b7f4-8c84dce17407)
 
-![wazuh_log](https://github.com/user-attachments/assets/a0243f38-eb89-4791-a5d7-4307e61438e0)
 
