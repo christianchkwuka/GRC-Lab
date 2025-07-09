@@ -63,3 +63,6 @@ This documentation describes how to centrally monitor pfSense firewall and Suric
   "location": "/var/log/syslog",
   "timestamp": "2025-07-09T13:01:12.000Z"
 }
+
+
+/home/grc-lab-ubuntu/Pictures/Screenshots/Screenshot from 2025-07-09 20-37-40.png
