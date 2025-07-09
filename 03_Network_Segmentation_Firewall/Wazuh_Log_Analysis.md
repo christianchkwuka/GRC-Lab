@@ -65,5 +65,5 @@ This documentation describes how to centrally monitor pfSense firewall and Suric
 }
 
 
-![wazuh_log](https://github.com/user-attachments/assets/075c1d5d-439c-4cfb-82fe-3607822ea29f)
+![wazuh_log](https://github.com/user-attachments/assets/a0243f38-eb89-4791-a5d7-4307e61438e0)
 
