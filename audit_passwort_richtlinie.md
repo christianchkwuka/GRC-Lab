@@ -14,7 +14,7 @@ Christian Chukwuka
 
 ## 🔍 Audit Scope
 - GPO: Default Domain Policy (Passwortrichtlinie)
-- System: Windows Server 2019 (Domänencontroller)
+- System: Windows Server 2022 (Domänencontroller)
 - Benutzer: TestUser1
 
 ---
