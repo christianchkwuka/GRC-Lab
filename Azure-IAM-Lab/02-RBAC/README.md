@@ -43,9 +43,4 @@ Der Zweck dieses Abschnitts ist es:
 1. Die **Checkliste** durchgehen, um das Audit Schritt für Schritt durchzuführen.  
 2. Die **CLI- bzw. PowerShell-Skripte** ausführen, um RBAC-Rollen und Gruppenprüfungen zu validieren.  
 3. Die **Ergebnisse** im Audit-Report-Template dokumentieren.  
-4. Screenshots in den Ordner `Screenshots/` hochladen, um prüfbare Nachweise zu sichern.  
-
----
-
-✅ With this structure, the repo looks like a **real audit project** with documentation, scripts, checklists, and evidence.
-
+4. Screenshots in den Ordner `Screenshots/` hochladen, um prüfbare Nachweise zu sichern. 
