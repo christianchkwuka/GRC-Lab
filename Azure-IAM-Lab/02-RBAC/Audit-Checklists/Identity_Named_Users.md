@@ -1,100 +1,62 @@
-# 🔍 IT Audit Checklist – Verify Named Accounts (No Shared Accounts)
+# 🔐 Identity Management Audit – Named User Accounts
 
-## 🇬🇧 English Version
-
-### 1. Audit Objective
-Ensure that all accounts in Azure Active Directory are assigned to named individuals.  
-There should be no generic or shared accounts (e.g., admin123, shareduser, testaccount).
-
-**Supports:**  
-- ISO 27001 A.9.2.1 – User registration and de-registration  
-- NIST AC-2 – Account Management  
-- BSI ORP.4.A6 – Unique user IDs  
-- GDPR Art. 32 – Accountability & access control  
+## 🎯 Purpose
+Ensure that **all accounts in Azure AD are linked to named individuals**.  
+Shared or anonymous accounts increase security risks and reduce accountability.  
 
 ---
 
-### 2. Practical Steps
-**a) Azure Portal**  
-- Go to: *Microsoft Entra ID → Users*.  
-- Review the list:  
-  ✅ Named accounts → Alice Franklin, Bob Uchechukwu  
-  ❌ Generic accounts → TestAdmin, ITSupport  
-- Open user profile → check Sign-in logs for usage.  
+## 1️⃣ Azure CLI Verification
 
-**b) Azure CLI**  
+Run the following command to list all users in Azure AD:
+
 ```bash
 az ad user list --output table
-Example Output:
-
+✅ Example Output
 DisplayName	UserPrincipalName	UserType
 Alice Franklin	alice.hr@tenant.onmicrosoft.com	Member
 Bob Uchechukwu	bob.it@tenant.onmicrosoft.com	Member
 TestAdmin ❌	admin@tenant.onmicrosoft.com	Member
 
-👉 Finding: Alice & Bob ✅, TestAdmin ❌
+🔎 Findings
+Alice Franklin → ✔️ Named individual
 
-c) Check for Shared Usage
+Bob Uchechukwu → ✔️ Named individual
+
+TestAdmin → ❌ Generic / shared account (should be remediated)
+
+2️⃣ Check for Shared Usage
+Run the following to review sign-in logs for suspicious patterns:
 
 bash
 Copy code
-az ad signin list --filter "userPrincipalName eq 'admin@tenant.onmicrosoft.com'" --output table
-Signs of shared account: multiple IPs / locations in short timeframe ❌.
+az ad signin list --filter "userPrincipalName eq 'admin@tenant.onmicrosoft.com'"
+⚠️ Signs of Shared Account
+Multiple IP addresses within short timeframes
 
-3. Audit Documentation
+Logins from geographically distant locations
+
+No linked personal identity
+
+3️⃣ Audit Documentation
 Audit Task	Evidence (Screenshot/CLI)	Result	Risk
-Verify accounts are linked to people	Screenshot + CLI output	4 named accounts, 1 generic account found	Medium – weakens accountability
+Verify accounts are linked to real people	Screenshot + CLI Output	Pass/Fail	High if generic accounts exist
 
-Recommendation:
+4️⃣ Recommendations
+✔️ Replace all generic accounts (e.g., TestAdmin, Admin) with personal accounts.
+✔️ For service accounts:
 
-Replace generic accounts with personal accounts.
+Must have Owner
 
-Service accounts must have: Owner + Purpose + Strong password + MFA.
+Must have Documented Purpose
 
-🇩🇪 Deutsche Version
-1. Prüfungsziel
-Sicherstellen, dass alle Benutzerkonten in Azure Active Directory einer benannten Person zugeordnet sind.
-Keine generischen oder geteilten Konten (z. B. admin123, supportuser).
+Enforce Strong Password + MFA + Conditional Access
 
-Relevante Standards:
+📊 Framework Mapping
+ISO 27001 A.9.2.1 – User registration and de-registration
 
-ISO 27001 A.9.2.1 – Benutzerregistrierung und -deregistrierung
+NIST AC-2 – Account management
 
-NIST AC-2 – Benutzerkontenverwaltung
+BSI ORP.4.A4 – Personal user identification
 
-BSI ORP.4.A6 – Eindeutige Benutzerkennungen
-
-DSGVO Art. 32 – Rechenschaftspflicht & Zugriffskontrolle
-
-2. Durchführung
-a) Azure Portal
-
-Microsoft Entra ID → Benutzer.
-
-Überprüfen:
-✅ Echte Namen → Alice Franklin, Bob Uchechukwu
-❌ Generische Accounts → TestAdmin
-
-Anmeldeprotokolle auf Nutzung prüfen.
-
-b) Azure CLI
-
-bash
-Copy code
-az ad user list --output table
-Beispielausgabe:
-
-DisplayName	UserPrincipalName	Typ
-Alice Franklin	alice.hr@tenant.onmicrosoft.com	Mitglied
-Bob Uchechukwu	bob.it@tenant.onmicrosoft.com	Mitglied
-TestAdmin ❌	admin@tenant.onmicrosoft.com	Mitglied
-
-3. Dokumentation
-Prüfungsschritt	Nachweis	Ergebnis	Risiko
-Eindeutige Zuordnung prüfen	Screenshot + CLI-Ausgabe	4 Personenkonten, 1 generisches Konto	Mittel – Nachvollziehbarkeit reduziert
-
-Empfehlung:
-
-Generische Accounts abschaffen.
-
-Falls Service-Accounts notwendig → dokumentieren (Eigentümer, Zweck, Passwortpolicy, MFA).
+GDPR Art. 32 – Access control linked to individual
