@@ -1,3 +1,18 @@
+# ✅ Azure RBAC Audit Checklist (with CLI Commands)
+
+This checklist provides step-by-step audit tasks for validating RBAC (Role-Based Access Control) in Azure IAM Lab.  
+Each task includes **audit purpose, command, expected evidence, and compliance reference**.
+
+---
+
+## 1. Identity Management
+**Audit Task:** Verify all accounts are linked to named individuals (no shared accounts).  
+**Command (CLI):**
+```bash
+az ad user list --output table
+
+
+
 # ✅ Azure RBAC Audit Checklist
 
 This checklist provides step-by-step audit tasks for validating RBAC (Role-Based Access Control) in Azure IAM Lab.  
