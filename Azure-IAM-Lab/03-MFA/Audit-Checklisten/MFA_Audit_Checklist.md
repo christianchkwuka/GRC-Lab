@@ -1,9 +1,9 @@
 # MFA Audit Checklist / MFA Audit-Checkliste
 
 ## General Information / Allgemeine Informationen
-- **Auditor / Prüfer:** _____________________
-- **Date / Datum:** ________________________
-- **Tenant / Mandant:** ____________________
+- **Auditor / Prüfer:** Christian Chukwuka
+- **Date / Datum:** 27.08.2025
+- **Tenant / Mandant:** 
 - **Scope / Geltungsbereich:** Azure AD IAM Lab (Test Users)
 
 ---
