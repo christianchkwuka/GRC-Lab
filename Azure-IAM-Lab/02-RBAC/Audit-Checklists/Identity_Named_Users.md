@@ -28,8 +28,7 @@ TestAdmin → ❌ Generic / shared account (should be remediated)
 2️⃣ Check for Shared Usage
 Run the following to review sign-in logs for suspicious patterns:
 
-bash
-Copy code
+
 az ad signin list --filter "userPrincipalName eq 'admin@tenant.onmicrosoft.com'"
 ⚠️ Signs of Shared Account
 Multiple IP addresses within short timeframes
