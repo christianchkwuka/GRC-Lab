@@ -7,6 +7,9 @@ To verify that Multi-Factor Authentication (MFA) is enforced using secure authen
 - Screenshot: Authentication method policies (see `/screenshots/MFA_Policies.png`)
 - <img width="1865" height="905" alt="image" src="https://github.com/user-attachments/assets/fd6e8a64-fec0-4b8e-8a41-5aedf673f918" />
 
+<img width="1877" height="868" alt="image" src="https://github.com/user-attachments/assets/2596fc23-3791-4745-b7e4-652eead82f5d" />
+
+
 - CLI: `az ad user list --query "[].{Name:displayName, MFA:authenticationMethods}" -o table`
 
 - 
